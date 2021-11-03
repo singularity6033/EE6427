@@ -14,3 +14,8 @@ tmndec -o5 ./encode_yuv/q18.263 ./decode_yuv/q18d.yuv
 tmndec -o5 ./encode_yuv/q19.263 ./decode_yuv/q19d.yuv
 tmndec -o5 ./encode_yuv/q20.263 ./decode_yuv/q20d.yuv
 tmndec -o5 ./encode_yuv/q21.263 ./decode_yuv/q21d.yuv
+tmndec -o5 ./encode_yuv/b4000.263 ./decode_yuv/b1200d.yuv
+tmndec -o5 ./encode_yuv/b4000.263 ./decode_yuv/b1700d.yuv
+tmndec -o5 ./encode_yuv/b4000.263 ./decode_yuv/b2200d.yuv
+tmndec -o5 ./encode_yuv/b4000.263 ./decode_yuv/b2700d.yuv
+tmndec -o5 ./encode_yuv/b4000.263 ./decode_yuv/b3200d.yuv

@@ -16,10 +16,10 @@ q_decode_list = ["./decode_yuv/q02d.yuv","./decode_yuv/q03d.yuv",...
     "./decode_yuv/q16d.yuv","./decode_yuv/q17d.yuv",...
     "./decode_yuv/q18d.yuv","./decode_yuv/q19d.yuv",...
     "./decode_yuv/q20d.yuv","./decode_yuv/q21d.yuv"];
-b_decode_list =  ["./decode_yuv/b4000d.yuv","./decode_yuv/b3500d.yuv",...
-    "./decode_yuv/b3000d.yuv","./decode_yuv/b2500d.yuv",...
-    "./decode_yuv/b2000d.yuv"];
-[Y,U,V] = yuvRead(b_decode_list(1), width, height ,nFrame);
+b_decode_list =  ["./decode_yuv/b1200d.yuv","./decode_yuv/b1700d.yuv",...
+    "./decode_yuv/b2200d.yuv","./decode_yuv/b2700d.yuv",...
+    "./decode_yuv/b3200d.yuv"];
+% [Y,U,V] = yuvRead(b_decode_list(1), width, height ,nFrame);
 mean_psnr = zeros(20, 1);
 mean_mse = zeros(20, 1);
 % calculate psnr and mse with bitrate
@@ -51,26 +51,26 @@ title('MSE-Y against various bitrate with QPs range from 2 to 21',...
 
 mse_no_frame = zeros(5, 150);
 for j=1:5
-    [Y,U,V] = yuvRead(q_decode_list((j-1)*3 + 1), width, height ,nFrame);
-    for iFrame = 1:150
+    [Y,U,V] = yuvRead(b_decode_list(j), width, height ,nFrame);
+    for iFrame = 3:4:150
         mse_no_frame(j,iFrame) = immse(Y_orig(:,:,iFrame), Y(:,:,iFrame));
     end
 end
 
-no_frames = 1:4:150;
+no_frames = 3:4:150;
 figure(3)
-plot(no_frames,mse_no_frame(1,1:4:150),'LineWidth',1.5);
+plot(no_frames,mse_no_frame(1,3:4:150),'LineWidth',1.5);
 hold on;
-plot(no_frames,mse_no_frame(2,1:4:150),'LineWidth',1.5);
+plot(no_frames,mse_no_frame(2,3:4:150),'LineWidth',1.5);
 hold on;
-plot(no_frames,mse_no_frame(3,1:4:150),'LineWidth',1.5);
+plot(no_frames,mse_no_frame(3,3:4:150),'LineWidth',1.5);
 hold on;
-plot(no_frames,mse_no_frame(4,1:4:150),'LineWidth',1.5);
+plot(no_frames,mse_no_frame(4,3:4:150),'LineWidth',1.5);
 hold on;
-plot(no_frames,mse_no_frame(5,1:4:150),'LineWidth',1.5);
+plot(no_frames,mse_no_frame(5,3:4:150),'LineWidth',1.5);
 hold on;
-legend('4328.52kbits/sec','2282.07kbits/sec','1556.27kbits/sec','1198.94kbits/sec',...
-    '963.64kbits/sec','Location','northeast');
+legend('1200kbits/sec','1700kbits/sec','2200kbits/sec','2700kbits/sec',...
+    '3200kbits/sec','Location','northeast');
 ylabel('MSE','Fontname','Times New Roman')
 xlabel('Frame no.','Fontname','Times New Roman')
 title('MSE-Y against frame number','Fontname','Times New Roman')

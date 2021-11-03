@@ -18,3 +18,8 @@ tmn -i football_cif.yuv -x 2 -b 149 -S 0 -O 0 -I 18 -q 18 -B ./encode_yuv/q18.26
 tmn -i football_cif.yuv -x 2 -b 149 -S 0 -O 0 -I 19 -q 19 -B ./encode_yuv/q19.263
 tmn -i football_cif.yuv -x 2 -b 149 -S 0 -O 0 -I 20 -q 20 -B ./encode_yuv/q20.263
 tmn -i football_cif.yuv -x 2 -b 149 -S 0 -O 0 -I 21 -q 21 -B ./encode_yuv/q21.263
+tmn -i football_cif.yuv -x 2 -b 149 -S 0 -O 0 -r 2500000 -R 35 -B ./encode_yuv/b1200.263
+tmn -i football_cif.yuv -x 2 -b 149 -S 0 -O 0 -r 2500000 -R 35 -B ./encode_yuv/b1700.263
+tmn -i football_cif.yuv -x 2 -b 149 -S 0 -O 0 -r 2500000 -R 35 -B ./encode_yuv/b2200.263
+tmn -i football_cif.yuv -x 2 -b 149 -S 0 -O 0 -r 2500000 -R 35 -B ./encode_yuv/b2700.263
+tmn -i football_cif.yuv -x 2 -b 149 -S 0 -O 0 -r 2500000 -R 35 -B ./encode_yuv/b3200.263
